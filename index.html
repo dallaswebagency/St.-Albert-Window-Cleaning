@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none}
 .topbar .tag{color:var(--cyan);font-weight:700;letter-spacing:.04em}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(238,250,246,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(11,37,64,.08)}
 header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px;gap:20px}
-.logo svg{height:58px;width:auto}
+.logo img{height:68px;width:auto;display:block}
 .menu{display:flex;align-items:center;gap:34px}
 .menu a.lnk{font-weight:600;font-size:.97rem;position:relative;padding:6px 0}
 .menu a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--cyan);border-radius:2px;transition:width .25s}
@@ -196,8 +196,7 @@ form.est h3{font-family:var(--head);font-weight:400;text-transform:uppercase;fon
 /* footer */
 footer{background:var(--ink);color:#c6dcec;padding:70px 0 0}
 .fgrid{display:grid;grid-template-columns:1.4fr .8fr 1.1fr;gap:clamp(28px,5vw,70px);padding-bottom:50px}
-footer .logo svg{height:64px}
-footer .logo .wm{fill:#fff}
+footer .logo img{height:68px}
 footer p.t{margin-top:16px;max-width:24em}
 footer p.t b{font-family:var(--head);font-weight:400;font-size:1.5rem;letter-spacing:.03em;text-transform:uppercase;color:var(--cyan);display:block;margin-bottom:6px}
 footer h4{font-family:var(--head);font-weight:400;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:18px}
@@ -234,7 +233,7 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
 }
 @media (max-width:560px){
   .topbar .tag{display:none}.topbar .wrap{justify-content:center}
-  .logo svg{height:48px}
+  .logo img{height:52px}
   .two{grid-template-columns:1fr}
   .badge-years{width:104px;height:104px;right:-6px}.badge-years b{font-size:2.1rem}
   .fgrid{grid-template-columns:1fr}
@@ -267,12 +266,7 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
 <header class="nav">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="St. Albert Window Cleaning home">
-      <svg viewBox="0 0 330 92" role="img" aria-label="St. Albert Window Cleaning">
-        <defs><linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a9bf0"/><stop offset="1" stop-color="#1f6cc2"/></linearGradient></defs>
-        <g transform="translate(34 46)"><path fill="#70d0e0" d="M0-44Q4-8 30 0 4 8 0 44-4 8-30 0-4-8 0-44z"/></g>
-        <text class="wm" x="72" y="42" font-family="Anton,Impact,sans-serif" font-size="42" fill="url(#lg1)" textLength="238" lengthAdjust="spacingAndGlyphs">ST. ALBERT</text>
-        <text class="wm" x="72" y="82" font-family="Anton,Impact,sans-serif" font-size="30" fill="#0b2540" textLength="250" lengthAdjust="spacingAndGlyphs">WINDOW CLEANING</text>
-      </svg>
+      <img src="assets/logo.png" alt="St. Albert Window Cleaning" width="1000" height="309">
     </a>
     <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
     <nav class="menu" id="menu">
@@ -443,12 +437,8 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
     <div class="fgrid">
       <div>
         <a class="logo" href="#top" aria-label="St. Albert Window Cleaning home">
-          <svg viewBox="0 0 330 92" role="img" aria-label="St. Albert Window Cleaning">
-            <g transform="translate(34 46)"><path fill="#70d0e0" d="M0-44Q4-8 30 0 4 8 0 44-4 8-30 0-4-8 0-44z"/></g>
-            <text class="wm" x="72" y="42" font-family="Anton,Impact,sans-serif" font-size="42" fill="#fff" textLength="238" lengthAdjust="spacingAndGlyphs">ST. ALBERT</text>
-            <text x="72" y="82" font-family="Anton,Impact,sans-serif" font-size="30" fill="#70d0e0" textLength="250" lengthAdjust="spacingAndGlyphs">WINDOW CLEANING</text>
-          </svg>
-        </a>
+      <img src="assets/logo-light.png" alt="St. Albert Window Cleaning" width="1000" height="309">
+    </a>
         <p class="t"><b>Let The Sun Shine In!!</b>Family owned and dedicated to serving the greater St. Albert area for over 25 years.</p>
       </div>
       <div>
