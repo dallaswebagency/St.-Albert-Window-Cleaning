@@ -92,11 +92,15 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;p
 /* mullion band */
 .band{position:relative;margin-top:-56px;z-index:5}
 .mull{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:#fff;padding:10px;border-radius:6px;box-shadow:0 28px 60px -30px rgba(11,37,64,.55)}
-.mull article{position:relative;padding:34px 30px 32px;background:linear-gradient(160deg,var(--ink) 0,var(--ink-2) 100%);color:#fff;overflow:hidden}
-.mull article:nth-child(2){background:linear-gradient(160deg,var(--blue-d) 0,var(--blue) 100%)}
-.mull article:nth-child(3){background:linear-gradient(160deg,var(--teal) 0,#33c9bd 100%)}
-.mull .num{position:absolute;right:16px;top:-6px;font-family:var(--head);font-size:6.4rem;line-height:1;color:rgba(255,255,255,.12)}
-.mull .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;margin-bottom:22px}
+.mull article{--tint:#0b2540;position:relative;padding:34px 30px 32px;min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,var(--ink) 0,var(--ink-2) 100%);color:#fff;overflow:hidden}
+.mull article:nth-child(2){--tint:#1f6cc2;background:linear-gradient(160deg,var(--blue-d) 0,var(--blue) 100%)}
+.mull article:nth-child(3){--tint:#0a8f86;background:linear-gradient(160deg,var(--teal) 0,#33c9bd 100%)}
+.mull .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .8s ease}
+.mull article:hover .bgimg{transform:scale(1.06)}
+.mull article::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,37,64,0) 18%,var(--tint) 96%)}
+.mull article>*:not(.bgimg){position:relative;z-index:2}
+.mull .num{position:absolute!important;right:16px;top:-6px;font-family:var(--head);font-size:6.4rem;line-height:1;color:rgba(255,255,255,.12)}
+.mull .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);display:grid;place-items:center;margin-bottom:18px}
 .mull .ico svg{width:26px;height:26px}
 .mull h3{font-family:var(--head);font-weight:400;text-transform:uppercase;font-size:1.9rem;letter-spacing:.02em;margin-bottom:8px}
 .mull p{color:rgba(255,255,255,.86);font-size:.98rem}
@@ -133,9 +137,16 @@ header.nav .wrap{display:flex;align-items:center;justify-content:space-between;p
 .voices .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:46px}
 .voices h2{font-size:clamp(2.4rem,5vw,4.2rem);margin-top:14px}
 .voices h2 em{font-style:normal;color:var(--blue)}
-.vgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start}
+.vwrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,4vw,56px);align-items:center}
+.vphoto{position:relative;background:#fff;padding:12px;border-radius:6px;box-shadow:0 30px 60px -30px rgba(11,37,64,.55)}
+.vphoto .g{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(170deg,#9fd8f0 0,var(--mint) 100%)}
+.vphoto .g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vphoto .g::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:9px;background:#fff;transform:translateX(-50%);z-index:2}
+.vphoto .tag{position:absolute;left:-16px;bottom:34px;z-index:3;background:var(--ink);color:#fff;padding:12px 20px;border-radius:6px;font-family:var(--head);text-transform:uppercase;letter-spacing:.04em;font-size:1.15rem;box-shadow:0 14px 28px -12px rgba(11,37,64,.6)}
+.vphoto .tag span{color:var(--cyan)}
+.vgrid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
 .quote{position:relative;background:#fff;border-radius:6px;padding:46px 40px 36px;box-shadow:0 24px 50px -32px rgba(11,37,64,.5)}
-.quote.alt{margin-top:60px;background:var(--mint)}
+.quote.alt{margin-left:clamp(0px,4vw,56px);background:var(--mint)}
 .quote::before{content:"\201C";position:absolute;left:30px;top:-8px;font-family:var(--head);font-size:7rem;line-height:1;color:var(--cyan)}
 .quote.alt::before{color:var(--blue)}
 .quote .stars{display:flex;gap:3px;color:#f5b301;margin-bottom:14px}
@@ -177,6 +188,8 @@ form.est h3{font-family:var(--head);font-weight:400;text-transform:uppercase;fon
 .fld input:focus,.fld textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,134,224,.18)}
 .fld textarea{min-height:130px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cphoto{margin-top:26px;border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:linear-gradient(160deg,#9fd8f0 0,#e3f8f2 100%);box-shadow:0 24px 50px -30px rgba(11,37,64,.6);border:10px solid #fff;position:relative}
+.cphoto img{width:100%;height:100%;object-fit:cover}
 .ok{display:none;margin-top:16px;padding:14px 18px;border-radius:10px;background:#e3f8e0;color:#1d6b14;font-weight:700}
 .ok.show{display:block}
 
@@ -206,10 +219,11 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
 @media (max-width:960px){
-  .hero .wrap,.ba .wrap,.about .wrap,.contact .wrap,.vgrid{grid-template-columns:1fr}
+  .hero .wrap,.ba .wrap,.about .wrap,.contact .wrap,.vwrap{grid-template-columns:1fr}
+  .vphoto{max-width:420px;margin:0 auto 10px}
   .panes{max-width:560px;margin:0 auto;padding-left:24px}
   .mull{grid-template-columns:1fr}
-  .quote.alt{margin-top:0}
+  .quote.alt{margin-left:0}
   .fgrid{grid-template-columns:1fr 1fr}.fgrid>div:first-child{grid-column:1/-1}
   .ba .shot{max-width:520px;margin:0 22px 22px 0}
   .menu{position:absolute;left:0;right:0;top:100%;background:var(--mint-l);flex-direction:column;align-items:stretch;gap:0;padding:8px var(--gut) 22px;border-bottom:1px solid rgba(11,37,64,.1);display:none}
@@ -298,18 +312,21 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
   <div class="wrap">
     <div class="mull rv">
       <article>
+        <img class="bgimg" src="assets/pane-quality.jpg" alt="Sparkling clean window with sunlight coming through" loading="lazy" onerror="this.remove()">
         <span class="num">01</span>
         <div class="ico"><svg viewBox="0 0 24 24"><use href="#i-sparkle"/></svg></div>
         <h3>Quality Cleaning</h3>
         <p>Quick, thorough work, and windows that look great.</p>
       </article>
       <article>
+        <img class="bgimg" src="assets/pane-staff.jpg" alt="Window cleaning squeegee, bucket and tools" loading="lazy" onerror="this.remove()">
         <span class="num">02</span>
         <div class="ico"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></div>
         <h3>Professional Staff</h3>
         <p>Friendly, family-run service from people who care.</p>
       </article>
       <article>
+        <img class="bgimg" src="assets/pane-rates.jpg" alt="Home exterior with bright clean windows" loading="lazy" onerror="this.remove()">
         <span class="num">03</span>
         <div class="ico"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg></div>
         <h3>Affordable Rates</h3>
@@ -360,6 +377,8 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
     <div class="head rv">
       <div><span class="eyebrow">Testimonials</span><h2 class="display">Clean windows make the <em>whole house shine</em></h2></div>
     </div>
+    <div class="vwrap">
+    <div class="vphoto rv"><div class="g"><img src="assets/home-light.jpg" alt="Bright living room with clean windows" loading="lazy" onerror="this.remove()"></div><div class="tag">Braeside <span>&middot;</span> St. Albert</div></div>
     <div class="vgrid">
       <figure class="quote rv">
         <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
@@ -371,6 +390,7 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
         <p>Clean windows make my whole house shine!!</p>
         <figcaption class="who"><span class="av">S</span><span><b>Sarah Garcia</b><small>Braeside, St. Albert</small></span></figcaption>
       </figure>
+    </div>
     </div>
   </div>
 </section>
@@ -400,6 +420,7 @@ footer ul svg{width:17px;height:17px;color:var(--cyan);flex:none}
         <li><a href="mailto:stalbertwindowcleaning@gmail.com"><span class="ic"><svg><use href="#i-mail"/></svg></span><span><small>Email</small>stalbertwindowcleaning@gmail.com</span></a></li>
         <li><div><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Location</small>St. Albert, Alberta</span></div></li>
       </ul>
+      <div class="cphoto"><img src="assets/contact-window.jpg" alt="Sunlight through a spotless window" loading="lazy" onerror="this.remove()"></div>
     </div>
     <form class="est rv" id="estForm" action="mailto:stalbertwindowcleaning@gmail.com" method="post" enctype="text/plain">
       <h3>Call for a free estimate</h3>
